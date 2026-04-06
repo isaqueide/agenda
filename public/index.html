@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agenda de Tarefas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <h1>📌 Agenda</h1>
+        <p>Organize suas tarefas com alertas Telegram.</p>
+
+        <button id="toggle-theme" class="btn btn-secondary">🌙 Alternar tema</button>
+
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">Todas</button>
+          <button class="filter-btn" data-filter="pending">Pendentes</button>
+          <button class="filter-btn" data-filter="completed">Concluídas</button>
+          <button class="filter-btn" data-filter="overdue">Atrasadas</button>
+          <button class="filter-btn" data-filter="archived">Histórico</button>
+        </div>
+      </aside>
+
+      <main class="content">
+        <section class="panel">
+          <h2 id="form-title">Nova tarefa</h2>
+          <form id="task-form">
+            <input type="hidden" id="task-id" />
+
+            <label>
+              Título
+              <input id="title" type="text" maxlength="120" required placeholder="Ex: Finalizar relatório" />
+            </label>
+
+            <label>
+              Descrição (opcional)
+              <textarea id="description" rows="3" placeholder="Detalhes da tarefa"></textarea>
+            </label>
+
+            <label>
+              Prazo para conclusão
+              <input id="dueDateTime" type="datetime-local" required />
+            </label>
+
+            <div class="actions">
+              <button class="btn btn-primary" type="submit">Salvar</button>
+              <button class="btn" type="button" id="cancel-edit" hidden>Cancelar edição</button>
+            </div>
+          </form>
+          <p class="error" id="form-error" role="alert"></p>
+        </section>
+
+        <section class="panel">
+          <div class="heading-row">
+            <h2>Tarefas</h2>
+            <button id="refresh" class="btn">Atualizar</button>
+          </div>
+          <div id="task-list" class="task-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <template id="task-template">
+      <article class="task-card">
+        <header>
+          <h3 class="task-title"></h3>
+          <span class="badge"></span>
+        </header>
+        <p class="task-description"></p>
+        <div class="task-meta"></div>
+        <footer class="card-actions"></footer>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
