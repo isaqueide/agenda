@@ -167,7 +167,7 @@ def run():
         if not history.contains(no_result_id):
 
             message = (
-                "🔔 MONITORAMENTO DO DIÁRIO OFICIAL DO ACRE\n"
+                "🔔 MONITORAMENTO DO DIÁRIO_OF\n"
                 f"📅 Data da consulta: "
                 f"{datetime.now(ZoneInfo('America/Rio_Branco')):%d/%m/%Y %H:%M}\n"
                 f"📄 Publicação: {pub_date}\n\n"
