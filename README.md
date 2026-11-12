@@ -1,4 +1,4 @@
-# Monitoramento do Diário Oficial do Estado do Acre
+# Monitoramento do Diário
 
 Sistema automatizado desenvolvido em Python para consultar
 o Diário Oficial do Estado do Acre, pesquisar nomes e enviar
